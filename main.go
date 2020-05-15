@@ -6,10 +6,8 @@ type fxResult struct {
 }
 
 func Merge2Channels(f func(int) int, in1 <-chan int, in2 <-chan int, out chan<- int, n int) {
-	processed := 0
 	processFx := func(item fxResult, resultChan chan fxResult) {
 		item.x = f(item.x)
-		processed++
 		resultChan <- item
 	}
 

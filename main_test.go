@@ -73,6 +73,8 @@ func TestMerge2Channels(t *testing.T) {
 			}
 		}
 
+		t.Logf("Len(out) = %d", len(out))
+
 		wg.Done()
 	}()
 
